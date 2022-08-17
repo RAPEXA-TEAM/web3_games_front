@@ -1,0 +1,11 @@
+flutter pub run easy_localization:generate -O lib/gen/lng_config -S assets/languages
+
+
+flutter pub run easy_localization:generate -S assets/languages -O lib/core/gen/lng_config
+flutter pub run easy_localization:generate -f keys -S assets/languages -O lib/core/gen/lng_keys
+
+flutter packages pub run build_runner build
+
+dart pub global activate flutter_gen
+
+

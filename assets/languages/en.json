@@ -1,0 +1,36 @@
+{
+  "welcome": "Welcome",
+  "games": "Games",
+  "hubs": "Hubs",
+  "events": "Events",
+  "aboutUs": "About Us",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
+  "fa": "Persian",
+  "en": "English",
+  "ubuntu": "Ubuntu",
+  "anjoman": "Anjoman",
+  "material": "Material(Android)",
+  "cupertino": "Cupertino(iOS)",
+  "settings": "Settings",
+  "theme": "Theme",
+  "language": "Language",
+  "font": "Font",
+  "appStyle": "App Style",
+  "fontChangeNotice": "This option will take effect after restarting the app",
+  "downloadAutoNewApp": "Automatic download new app version",
+
+
+
+
+
+  "gender": {
+        "male": "Hi man ;) ",
+        "female": "Hello girl :)",
+        "with_arg": {
+            "male": "Hi man ;) {}",
+            "female": "Hello girl :) {}"
+        }
+    }
+}

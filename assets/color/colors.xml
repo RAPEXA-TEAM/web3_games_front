@@ -1,0 +1,94 @@
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="desGreen">#99B66F</color>
+    <color name="titleGreen">#3D512D</color>
+    <color name="titleGreenBlack">#2C391E</color>
+    <color name="waveProgressColor">#99B66F</color>
+    <color name="waveBackgroundColor">#E9F0E2</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="background">#e5e5e5</color>
+    <color name="half_black">#808080</color>
+    <color name="white_fab">#fafafa</color>
+    <color name="white_pressed">#f1f1f1</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
+    <color name="actionbar_light">#0B49E4</color>
+    <color name="actionbar_night">#8b8b8b</color>
+    <color name="actionbar_pink">#f100c9</color>
+    <color name="background_light">#FFFFFFFF</color>
+    <color name="background_night">#1B1B1B</color>
+    <color name="background_pink">#F5D3FB</color>
+    <color name="icon_light">#131313</color>
+    <color name="icon_night">#ECECEC</color>
+    <color name="icon_default">#9FB78B</color>
+    <color name="icon_pink">#33003C</color>
+    <color name="text_light">#131313</color>
+    <color name="text_night">#ECECEC</color>
+    <color name="text_pink">#33003C</color>
+    <color name="button_light">#A5BEF4</color>
+    <color name="button_night">#b8b8b8</color>
+    <color name="button_pink">#EF87DE</color>
+    <color name="themeDeselected">#d69b9b9b</color>
+    <color name="themeSelected">#e300aaff</color>
+    <color name="seperator">#7ca6a6a6</color>
+    <!--  default theme  -->
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="primaryText">#000000</color>
+    <color name="secondaryText">#FFFFFF</color>
+    <color name="backgroundColor">#969696</color>
+    <color name="tabBackgroundColor">#008577</color>
+    <color name="tabTextColor">#000000</color>
+    <color name="tabTextSelectedColor">#97f9ec</color>
+    <color name="tabIndicatorColor">#97f9ec</color>
+    <!--  default theme  -->
+    <!--  black theme  -->
+    <color name="blackColorPrimary">#000000</color>
+    <color name="blackColorPrimaryDark">#121212</color>
+    <color name="blackColorAccent">#f76d32</color>
+    <color name="blackPrimaryText">#FFFFFF</color>
+    <color name="desGreenColorWhite">#DACDCD</color>
+    <color name="blue_light">#009AFF</color>
+    <color name="blackSecondaryText">#403d3d</color>
+    <color name="blackBackgroundColor">#969696</color>
+    <color name="blackTabBackgroundColor">#000000</color>
+    <color name="blackTabTextColor">#403d3d</color>
+    <color name="blackTabTextSelectedColor">#FFFFFF</color>
+    <color name="blackTabIndicatorColor">#FFFFFF</color>
+    <!--  black theme  -->
+    <!--  green theme  -->
+    <color name="greenColorPrimary">#8BC34A</color>
+    <color name="greenColorPrimaryDark">#689F38</color>
+    <color name="greenColorPrimaryLight">#DCEDC8</color>
+    <color name="greenColorAccent">#4CAF50</color>
+    <color name="greenPrimaryText">#212121</color>
+    <color name="greenSecondaryText">#757575</color>
+    <color name="greenBackgroundColor">#969696</color>
+    <color name="greenTabBackgroundColor">#8BC34A</color>
+    <color name="greenTabTextColor">#757575</color>
+    <color name="greenTabTextSelectedColor">#DCEDC8</color>
+    <color name="greenTabIndicatorColor">#DCEDC8</color>
+    <!--  green theme  -->
+    <color name="purpleColorPrimary">#673AB7</color>
+    <color name="purpleColorPrimaryDark">#512DA8</color>
+    <color name="purpleColorPrimaryLight">#D1C4E9</color>
+    <color name="purpleColorAccent">#4CAF50</color>
+    <color name="purplePrimaryText">#212121</color>
+    <color name="purpleSecondaryText">#757575</color>
+    <color name="purpleBackgroundColor">#969696</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="purpleTabBackgroundColor">#673AB7</color>
+    <color name="purpleTabTextColor">#757575</color>
+    <color name="purpleTabTextSelectedColor">#D1C4E9</color>
+    <color name="purpleTabIndicatorColor">#D1C4E9</color>
+</resources>

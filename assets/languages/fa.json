@@ -1,0 +1,35 @@
+{
+  "welcome": "خوش آمدید",
+  "games": "گیم ها",
+  "hubs": "مراکز",
+  "events": "رویداد ها",
+  "aboutUs": "درباره ما",
+  "light": "روشن",
+  "dark": "تیره",
+  "system": "سیستم",
+  "fa": "فارسی",
+  "en": "English",
+  "ubuntu": "اوبونتو مونو",
+  "anjoman": "انجمن",
+  "material": "متریال(اندروید)",
+  "cupertino": "کوپرتینو(آی او اس)",
+  "settings": "تنظیمات",
+  "theme": "تم",
+  "language": "زبان",
+  "font": "فونت",
+  "appStyle": "ظاهر برنامه",
+  "fontChangeNotice": "این آپشن بعد از ریستارت شدن برنامه اعمال میشود",
+  "downloadAutoNewApp": "دانلود ورژن جدید برنامه به صورت خودکار ",
+
+
+
+
+  "gender": {
+        "male": "Hi man ;) ",
+        "female": "Hello girl :)",
+        "with_arg": {
+            "male": "Hi man ;) {}",
+            "female": "Hello girl :) {}"
+        }
+    }
+}
