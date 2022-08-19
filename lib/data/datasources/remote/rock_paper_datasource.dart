@@ -1,9 +1,13 @@
+import 'package:flutter_web3_games/data/models/createRockPaperGame_rp.dart';
+import 'package:flutter_web3_games/data/models/createRockPaperGame_rq.dart';
+import 'package:flutter_web3_games/data/models/getAllRockPaper_rp.dart';
+import 'package:flutter_web3_games/data/models/joinRockPaperGame_rq.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_web3_games/data/config/stream_socket.dart';
-import 'package:flutter_web3_games/data/models/rock_paper/rock_paper_base.dart';
-import '../local/sharedStore.dart';
+import 'package:flutter_web3_games/data/models/events/rock_paper_base.dart';
+import '../../models/base_model.dart';
 
 class RockPaperDatasource {
 
@@ -15,37 +19,65 @@ class RockPaperDatasource {
   RockPaperDatasource(this.dio, this.socket, this.streamSocket);
 
   Stream<RockPaperBaseModel> listen() {
-    socket.on('rockPaperAdded', (data) {
+    socket.on('gameEvent', (data) {
       debugPrint("new message:$data");
-      streamSocket.addResponse.call(MessageModel.fromJson(data));
+      streamSocket.addResponse.call(GameEvent.fromJson(data));
     });
-    socket.on('rockPaperChanged', (data) {
-      debugPrint("user joined:$data");
-      streamSocket.addResponse.call(UserJoinedModel.fromJson(data));
+    socket.on('gameEndResult', (data) {
+      debugPrint("new message:$data");
+      streamSocket.addResponse.call(GameEndEvent.fromJson(data));
+    });
+    socket.on('gameRoundResult', (data) {
+      debugPrint("new message:$data");
+      streamSocket.addResponse.call(GameRoundEvent.fromJson(data));
     });
     return streamSocket.getResponse;
   }
 
 
-
-  Future<bool> createRockPaperGame(String message, String messageType) {
+  Future<BaseModel> getAllRockPaperGames() async {
     try {
-      debugPrint("ME:$message");
-      debugPrint("ME:$message");
-      socket.emit("new message", {"realName": SharedStore.getUserName(), "message": message, "messageType": messageType});
-      return Future.value(true);
+      var response = await dio.get('/rockpaper/getAllRockPaper');
+      return GetAllRockPaperRp.fromJson(response.data);
     } catch (e) {
-      return Future.value(false);
+      return BaseModel(error: "Network error");
     }
   }
 
-  Future<bool> joinToRockPaperGame(String userName) {
+  Future<BaseModel> createRockPaperGame(
+      CreateRockPaperGameRq rq) async {
     try {
-      debugPrint("ME:$userName");
-      socket.emit("add user", userName);
-      return Future.value(true);
+      var response = await dio.post('/rockpaper/createGame');
+      var result = CreateRockPaperGameRp.fromJson(response.data);
+      if(result.data?.gameId?.isNotEmpty == true){
+        socket.on(result.data!.gameId!, (data)  {
+          streamSocket.addResponse.call(GameRoundEvent.fromJson(data));
+        });
+      }
+      if(result.data?.gameId?.isNotEmpty == true){
+        socket.on("gameRoundResult", (data)  {
+          streamSocket.addResponse.call(GameRoundEvent.fromJson(data));
+        });
+      }
+      return result;
     } catch (e) {
-      return Future.value(false);
+      return BaseModel(error: "Network error");
+    }
+  }
+
+  Future<BaseModel> joinRockPaperGame(
+      JoinRockPaperGameRq rq) async {
+    try {
+      var response = await dio.get('/rockpaper/createGame');
+      var result = CreateRockPaperGameRp.fromJson(response.data);
+      if(result.data?.gameId?.isNotEmpty == true){
+        socket.on("gameRoundResult", (data)  {
+          streamSocket.addResponse.call(GameRoundEvent.fromJson(data));
+        });
+      }
+      return result;
+    } catch (e) {
+      return BaseModel(error: "Network error");
     }
   }
 

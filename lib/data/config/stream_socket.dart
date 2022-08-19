@@ -1,7 +1,7 @@
 
 import 'dart:async';
 
-import 'package:flutter_web3_games/data/models/rock_paper/rock_paper_base.dart';
+import 'package:flutter_web3_games/data/models/events/rock_paper_base.dart';
 
 
 class StreamSocketRockPaper{

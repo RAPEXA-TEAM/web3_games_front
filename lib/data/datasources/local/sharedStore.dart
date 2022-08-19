@@ -2,6 +2,8 @@ import 'dart:async' show Future;
 import 'dart:convert';
 import 'package:flutter_web3_games/core/gen/lng_keys/codegen_loader.g.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_web3_games/data/models/createRockPaperGame_rq.dart';
+import 'package:flutter_web3_games/data/models/joinRockPaperGame_rq.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const currentLanguage = "currentLanguage";
@@ -14,6 +16,8 @@ const userToken = "userToken";
 const userClashRoyaleTag = "userClashRoyaleTag";
 const userName = "userName";
 const registeredWalletAddress = "regWalletAddress";
+const createRockPaperGameRq = "createRockPaperGameRq";
+const joinRockPaperGameRq = "joinRockPaperGameRq";
 
 class SharedStore {
   static SharedPreferences? _prefsInstance;
@@ -138,5 +142,34 @@ class SharedStore {
 
   static Future<bool> setRegisteredWalletAddress(String value) {
     return setString(registeredWalletAddress, value);
+  }
+
+
+  static CreateRockPaperGameRq? getCreateRockPaperGameRq([String defValue = ""]) {
+    CreateRockPaperGameRq? model;
+    try {
+      model = CreateRockPaperGameRq.fromJson(jsonDecode(getString(createRockPaperGameRq, defValue)));
+    } catch (e) {
+      model = null;
+    }
+    return model;
+  }
+
+  static Future<bool> setCreateRockPaperGameRq(CreateRockPaperGameRq value) {
+    return setString(userName, jsonEncode(value));
+  }
+
+  static JoinRockPaperGameRq? getJoinRockPaperGameRq([String defValue = ""]) {
+    JoinRockPaperGameRq? model;
+    try {
+      model = JoinRockPaperGameRq.fromJson(jsonDecode(getString(joinRockPaperGameRq, defValue)));
+    } catch (e) {
+      model = null;
+    }
+    return model;
+  }
+
+  static Future<bool> setJoinRockPaperGameRq(CreateRockPaperGameRq value) {
+    return setString(userName, jsonEncode(value));
   }
 }

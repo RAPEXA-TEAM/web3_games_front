@@ -6,11 +6,13 @@ class AppButton extends StatefulWidget {
   String? text;
   Widget? textWidget;
   double? width;
+  Color? color;
+  Color? textColor;
   double widthIfNull = 130;
   double? height;
   double heightIfNull = 50;
   Function? onPressed;
-  AppButton({Key? key, this.text, this.width, this.height, this.textWidget, this.onPressed}) : super(key: key);
+  AppButton({Key? key, this.text, this.color, this.textColor, this.width, this.height, this.textWidget, this.onPressed}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -24,9 +26,11 @@ class _AppButtonState extends State<AppButton> {
 
   @override
   Widget build(BuildContext context) {
+    widget.widthIfNull = widget.width ?? widget.widthIfNull;
+    widget.heightIfNull = widget.height ?? widget.heightIfNull;
     return SizedBox(
-      width: widget.width ?? widget.widthIfNull,
-      height: widget.height ?? widget.heightIfNull,
+      width: widget.widthIfNull,
+      height: widget.heightIfNull,
       child: Center(
         child: InkWell(
           hoverColor: Colors.transparent,
@@ -46,7 +50,7 @@ class _AppButtonState extends State<AppButton> {
             height: isTapped ? (widget.heightIfNull - 5) : widget.heightIfNull,
             width: isTapped ? (widget.widthIfNull - 10) : widget.widthIfNull,
             decoration: BoxDecoration(
-              color: Colors.blueGrey,
+              color: widget.color ?? Colors.blueGrey,
               borderRadius: BorderRadius.all(
                 Radius.circular(30),
               ),
@@ -62,7 +66,7 @@ class _AppButtonState extends State<AppButton> {
               child: Text(
                 widget.text ?? "",
                 style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
+                  color: widget.textColor ?? Colors.black.withOpacity(0.7),
                   fontWeight: FontWeight.w500,
                   fontSize: 19,
                 ),

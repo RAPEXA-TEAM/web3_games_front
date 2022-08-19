@@ -5,6 +5,7 @@ import 'package:flutter_web3_games/core/consts.dart';
 import 'package:flutter_web3_games/data/datasources/local/sharedStore.dart';
 import 'package:flutter_web3_games/data/models/requestNonce_rp.dart';
 import 'package:flutter_web3_games/data/repositories/auth_repository.dart';
+import 'package:flutter_web3_games/view/widgets/app_dialog.dart';
 import 'package:flutter_web3_games/view/widgets/app_snackbar.dart';
 import 'package:get/get.dart';
 import '../../core/web3/provider.dart' as provider;
@@ -82,10 +83,14 @@ class Web3Controller extends GetxController {
     }
   }
 
-  Future<void> genesisPlayerStartGame() async {
+  String depositValue = '100000';
+  onDepositTextFieldChanged(String value){
+    depositValue = depositValue;
+  }
+  Future<void> genesisPlayerStartDeposit() async {
     await provider.joinGenesisPlayer(
-      Random().nextInt(100000).toString(),
-      BigInt.one,
+      "1",
+      BigInt.parse(depositValue),
           (success) {
         gameStarted = success;
         if (success) {
@@ -98,12 +103,28 @@ class Web3Controller extends GetxController {
     );
   }
 
-  ReqStatus requestNonceReqStatus = ReqStatus.initial;
+  Future<void> otherPlayerStartDeposit(String gameId, String gameDepositValue) async {
+    await provider.joinOtherPlayers(
+      gameId,
+      BigInt.parse(gameDepositValue),
+          (success) {
+        gameStarted = success;
+        if (success) {
+          AppSnackBar.showToast('Join to game successfully');
+        } else {
+          AppSnackBar.showToast('Join to game failed');
+        }
+        update();
+      },
+    );
+  }
 
-  Future<void> requestNonce({required Function(String) onSuccess}) async {
+  ReqStatus requestNonceReqStatus = ReqStatus.initial;
+  requestNonce({required Function(String) onSuccess})  {
     if (requestNonceReqStatus != ReqStatus.loading) {
       _authRepository.requestNonce(RequestNonceRq(walletAddress), start: () {
         requestNonceReqStatus = ReqStatus.loading;
+        AppSnackBar.showLoading();
         update();
       }, error: (error) {
         requestNonceReqStatus = ReqStatus.error;
@@ -133,6 +154,7 @@ class Web3Controller extends GetxController {
       _authRepository.validateSign(
           ValidateSignRq(walletAddress, sign), start: () {
         validateSignReqStatus = ReqStatus.loading;
+        AppSnackBar.showLoading();
         update();
       }, error: (error) {
         validateSignReqStatus = ReqStatus.error;

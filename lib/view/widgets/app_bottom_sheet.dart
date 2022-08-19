@@ -271,7 +271,7 @@ class AppBottomSheets {
                     padding: EdgeInsets.only(left: 20, right: 20),
                     child: InkWell(
                       onTap: () {
-                        controller.genesisPlayerStartGame();
+                        controller.genesisPlayerStartDeposit();
                       },
                       child: Text("Test"),
                     ),
