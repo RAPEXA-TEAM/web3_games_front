@@ -79,7 +79,7 @@ class CreateGameDialogBody extends StatelessWidget {
                 TextField(
                   decoration: InputDecoration(
                       labelText: "Your balance: ${Get.find<Web3Controller>().walletBalance}",
-                      hintText: "Inanimate hint"),
+                      hintText: "Enter game deposit amount"),
                 ),
                 AppButton(
                   height: 50,

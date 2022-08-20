@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'MMB_scroll_cursor_activity.dart';
 import 'config.dart';
 import 'custom_scroll_cursor.dart';
+import 'global_scroll_behovior.dart';
 
 class ImprovedScroller extends StatefulWidget{
 
@@ -47,7 +48,10 @@ class _ImprovedScrollerState extends State<ImprovedScroller>{
           scrollAmountMultiplier: 4.0,
           scrollDuration: Duration(milliseconds: 350),
         ),
-        child: widget.child,
+        child: ScrollConfiguration(
+          behavior: CustomScrollBehaviour(),
+          child: widget.child,
+        )
       );
     }
 }

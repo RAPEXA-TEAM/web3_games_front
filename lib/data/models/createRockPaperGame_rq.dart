@@ -14,7 +14,7 @@ class CreateRockPaperGameRq {
       json['value'],
     );
   }
-  toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'walletAddress': walletAddress,
       'txHash': txHash,

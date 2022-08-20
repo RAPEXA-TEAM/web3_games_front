@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter_web3_games/core/gen/lng_keys/codegen_loader.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_web3_games/data/models/createRockPaperGame_rq.dart';
+import 'package:flutter_web3_games/data/models/getAllRockPaper_rp.dart';
 import 'package:flutter_web3_games/data/models/joinRockPaperGame_rq.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -18,6 +19,7 @@ const userName = "userName";
 const registeredWalletAddress = "regWalletAddress";
 const createRockPaperGameRq = "createRockPaperGameRq";
 const joinRockPaperGameRq = "joinRockPaperGameRq";
+const myRockPaperGame = "myRockPaperGame";
 
 class SharedStore {
   static SharedPreferences? _prefsInstance;
@@ -172,4 +174,18 @@ class SharedStore {
   static Future<bool> setJoinRockPaperGameRq(CreateRockPaperGameRq value) {
     return setString(userName, jsonEncode(value));
   }
+
+  // static RockPaperGame? getMyRockPaperGame([String defValue = ""]) {
+  //   RockPaperGame? model;
+  //   try {
+  //     model = RockPaperGame.fromJson(jsonDecode(getString(joinRockPaperGameRq, defValue)));
+  //   } catch (e) {
+  //     model = null;
+  //   }
+  //   return model;
+  // }
+  //
+  // static Future<bool> setMyRockPaperGame(RockPaperGame value) {
+  //   return setString(userName, jsonEncode(value));
+  // }
 }

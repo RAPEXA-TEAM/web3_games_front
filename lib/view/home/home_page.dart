@@ -33,7 +33,7 @@ class HomePageStater extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return AdvancedDrawer(
-      backgroundBehaviour: RacingLinesBehaviour(),
+      backgroundBehaviour: SpaceBehaviour(),
       backdropColor: Colors.blueGrey,
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,

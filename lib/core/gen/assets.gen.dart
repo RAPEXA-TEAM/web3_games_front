@@ -93,6 +93,30 @@ class $AssetsImagesGen {
   /// File path: assets/images/scissors.png
   AssetGenImage get scissors =>
       const AssetGenImage('assets/images/scissors.png');
+
+  /// File path: assets/images/cyberpunk.jpeg
+  AssetGenImage get cyberpunk =>
+      const AssetGenImage('assets/images/cyberpunk.jpeg');
+
+  /// File path: assets/images/deathloop.jpg
+  AssetGenImage get deathloop =>
+      const AssetGenImage('assets/images/deathloop.jpg');
+
+  /// File path: assets/images/ghost-of-tsushima.jpeg
+  AssetGenImage get ghostOfTsushima =>
+      const AssetGenImage('assets/images/ghost-of-tsushima.jpeg');
+
+  /// File path: assets/images/horizon.jpg
+  AssetGenImage get horizon => const AssetGenImage('assets/images/horizon.jpg');
+
+  /// File path: assets/images/spider-man.jpg
+  AssetGenImage get spiderMan =>
+      const AssetGenImage('assets/images/spider-man.jpg');
+
+  /// File path: assets/images/the-last-of-us.jpeg
+  AssetGenImage get theLastOfUs =>
+      const AssetGenImage('assets/images/the-last-of-us.jpeg');
+
 }
 
 class $AssetsLanguagesGen {

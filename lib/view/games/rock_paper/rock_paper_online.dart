@@ -72,7 +72,7 @@ class _RockPaperPageOnlineState extends State<RockPaperPageOnline> {
                     child:
                     InkWell(
                       onTap: (){
-                        controller.init();
+
                       },
                       child: Card(
                         shape: RoundedRectangleBorder(

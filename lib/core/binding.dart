@@ -47,6 +47,7 @@ class AppBinding implements Bindings {
   }
 
   void initControllers() {
+    Get.lazyPut(() => AppController());
     Get.lazyPut(() => StreamSocketRockPaper());
     Get.lazyPut(() => IO.io(
         'http://localhost:5000',
@@ -56,7 +57,8 @@ class AppBinding implements Bindings {
             .setTransports(['websocket'])
             // .setPath("localhost:5000")
             // .setExtraHeaders({'Upgrade': 'websocket'})
-            .disableAutoConnect()
+            .enableAutoConnect()
+            .enableReconnection()
             .build()));
 
     Get.lazyPut(() => AppController());

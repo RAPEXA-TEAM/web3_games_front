@@ -3,7 +3,7 @@ class RequestNonceRq{
 
   String walletAddress;
   RequestNonceRq(this.walletAddress);
-  toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'walletAddress': walletAddress,
     };

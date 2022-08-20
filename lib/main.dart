@@ -1,4 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_web3_games/core/pubs/adaptiveTheme/adaptive_theme.dart';
 import 'package:flutter_web3_games/core/pubs/adaptiveTheme/adaptive_theme_mode.dart';
 import 'package:flutter_web3_games/core/pubs/adaptiveTheme/cupertino_adaptive_theme.dart';
@@ -9,9 +11,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:qlevar_router/qlevar_router.dart';
 import 'core/binding.dart';
 import 'core/consts.dart';
+import 'core/gen/assets.gen.dart';
 import 'core/gen/lng_keys/codegen_loader.g.dart';
 
 
@@ -29,6 +33,13 @@ void main() async {
   //   appWindow.show();
   // });
 
+
+  GoogleFonts.config.allowRuntimeFetching = false;
+
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString("assets/google_fonts/OFL.txt");
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
 
   runApp(
     EasyLocalization(

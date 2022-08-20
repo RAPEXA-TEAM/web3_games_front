@@ -9,16 +9,15 @@ import 'package:get/get.dart';
 import '../../logic/wallet/web3_controller.dart';
 
 class AppBottomSheets {
-
-  static Widget styledBottomSheetWithCloseButton(BuildContext context, Widget body){
+  static Widget styledBottomSheetWithCloseButton(
+      BuildContext context, Widget body) {
     return Stack(
       children: [
         Padding(
           padding: EdgeInsets.only(top: 20),
           child: Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(30.0)),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(30.0)),
                 color: Theme.of(context).cardColor),
             child: SingleChildScrollView(
               child: Padding(
@@ -48,6 +47,7 @@ class AppBottomSheets {
       ],
     );
   }
+
   static showBottomSheetSelectWallet(BuildContext context) {
     showModalBottomSheet(
       backgroundColor: Colors.transparent,
@@ -67,220 +67,226 @@ class AppBottomSheets {
         autoRemove: false,
         builder: (controller) {
           return !controller.isConnected
-              ? styledBottomSheetWithCloseButton(context, Column(
-            children: [
-
-              SizedBox(height: 20),
-              Text(
-                'Select Wallet',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 20),
-              InkWell(
-                onTap: () {
-                  controller.connectWithProvider(context, false);
-                },
-                child: Container(
-                  width: 250,
-                  padding: EdgeInsets.all(10),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Metamask"),
-                        Assets.images.icMetamask
-                            .image(width: 30, height: 30)
-                      ],
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius:
-                    BorderRadius.all(Radius.circular(5)),
-                    border: Border.all(
-                      style: BorderStyle.solid,
-                      color: Colors.green,
-                      width: 1,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              InkWell(
-                onTap: () {
-                  controller.connectWC(context, false);
-                },
-                child: Container(
-                  width: 250,
-                  padding: EdgeInsets.all(10),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("WalletConnect"),
-                        Assets.images.icWalletconnect
-                            .image(width: 30, height: 30)
-                      ],
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius:
-                    BorderRadius.all(Radius.circular(5)),
-                    border: Border.all(
-                      style: BorderStyle.solid,
-                      color: Colors.green,
-                      width: 1,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              SizedBox(
-                width: 250,
-                child: Row(
-                  mainAxisAlignment:
-                  MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(child: Divider()),
-                    SizedBox(width: 10),
-                    Text("What is a wallet?"),
-                    SizedBox(width: 10),
-                    Expanded(child: Divider()),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              Center(
-                child: SizedBox(
-                  width: 250,
-                  child: Row(
-                    mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
+              ? styledBottomSheetWithCloseButton(
+                  context,
+                  Column(
                     children: [
-                      AppButton(text: "Learn more"),
-                      AppButton(
-                        text: "Get help",
-                        onPressed: () {},
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              SizedBox(
-                  width: 250,
-                  child: Text(
-                      "By continuing, you agree to the Terms of Service and Privacy Policy")),
-            ],
-          )) : styledBottomSheetWithCloseButton(context, Column(children: [
-
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius:
-                  BorderRadius.vertical(top: Radius.circular(30.0)),
-                  color: Theme.of(context).cardColor),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(25),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomPopupMenuButton(
-                          actions: [
-                            PopupMenuItemModel(
-                                title: "Refresh funds",
-                                icon: AppIcons.getRefresh(),
-                                onTap: () {}),
-                            PopupMenuItemModel(
-                                title: "Logout",
-                                icon: AppIcons.getLogout(),
-                                onTap: () {
-                                  // controller.logout();
-                                }),
-                          ],
-                          icon: Icon(Icons.account_balance_wallet_rounded),
-                          content: Text("My wallet"),
+                      SizedBox(height: 20),
+                      Text(
+                        'Select Wallet',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Text(controller.getWalletAddressWithDotOverFlow()),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: Card(
-                        clipBehavior: Clip.antiAlias,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          controller.connectWithProvider(context, false);
+                        },
+                        child: Container(
+                          width: 250,
+                          padding: EdgeInsets.all(10),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("Metamask"),
+                                Assets.images.icMetamask
+                                    .image(width: 30, height: 30)
+                              ],
+                            ),
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            border: Border.all(
+                              style: BorderStyle.solid,
+                              color: Colors.green,
+                              width: 1,
+                            ),
+                          ),
                         ),
-                        child: Column(
+                      ),
+                      SizedBox(height: 20),
+                      InkWell(
+                        onTap: () {
+                          controller.connectWC(context, false);
+                        },
+                        child: Container(
+                          width: 250,
+                          padding: EdgeInsets.all(10),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("WalletConnect"),
+                                Assets.images.icWalletconnect
+                                    .image(width: 30, height: 30)
+                              ],
+                            ),
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            border: Border.all(
+                              style: BorderStyle.solid,
+                              color: Colors.green,
+                              width: 1,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      SizedBox(
+                        width: 250,
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SizedBox(height: 20),
-                            Container(
-                              height: 90,
-                              child: Center(
-                                child: Column(
-                                  children: [
-                                    SizedBox(height: 20),
-                                    Text("Total Balance"),
-                                    SizedBox(height: 10),
-                                    Text(controller.walletBalance,
-                                        style: TextStyle(fontSize: 18))
-                                  ],
-                                ),
-                              ),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  style: BorderStyle.solid,
-                                  color: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1!
-                                      .color!,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10)),
-                              ),
-                            ),
-                            Container(
-                              height: 60,
-                              child: Center(child: Text("Add fund")),
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10)),
-                              ),
-                            )
+                            Expanded(child: Divider()),
+                            SizedBox(width: 10),
+                            Text("What is a wallet?"),
+                            SizedBox(width: 10),
+                            Expanded(child: Divider()),
                           ],
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20),
-                    child: InkWell(
-                      onTap: () {
-                        controller.genesisPlayerStartDeposit();
-                      },
-                      child: Text("Test"),
-                    ),
-                  ),
-                ],
-              ),
-            )
-
-          ],));
+                      SizedBox(height: 20),
+                      Center(
+                        child: SizedBox(
+                          width: 250,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AppButton(
+                                  height: 50, width: 120, text: "Learn more"),
+                              AppButton(
+                                height: 50,
+                                width: 120,
+                                text: "Get help",
+                                onPressed: () {},
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      SizedBox(
+                          width: 250,
+                          child: Text(
+                              "By continuing, you agree to the Terms of Service and Privacy Policy")),
+                    ],
+                  ))
+              : styledBottomSheetWithCloseButton(
+                  context,
+                  Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(30.0)),
+                            color: Theme.of(context).cardColor),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(25),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  CustomPopupMenuButton(
+                                    actions: [
+                                      PopupMenuItemModel(
+                                          title: "Refresh funds",
+                                          icon: AppIcons.getRefresh(),
+                                          onTap: () {}),
+                                      PopupMenuItemModel(
+                                          title: "Logout",
+                                          icon: AppIcons.getLogout(),
+                                          onTap: () {
+                                            // controller.logout();
+                                          }),
+                                    ],
+                                    icon: Icon(
+                                        Icons.account_balance_wallet_rounded),
+                                    content: Text("My wallet"),
+                                  ),
+                                  Text(controller
+                                      .getWalletAddressWithDotOverFlow()),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20, right: 20),
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: Card(
+                                  clipBehavior: Clip.antiAlias,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(height: 20),
+                                      Container(
+                                        height: 90,
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              SizedBox(height: 20),
+                                              Text("Total Balance"),
+                                              SizedBox(height: 10),
+                                              Text(controller.walletBalance,
+                                                  style:
+                                                      TextStyle(fontSize: 18))
+                                            ],
+                                          ),
+                                        ),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            style: BorderStyle.solid,
+                                            color: Theme.of(context)
+                                                .textTheme
+                                                .bodyText1!
+                                                .color!,
+                                            width: 1,
+                                          ),
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              topRight: Radius.circular(10)),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 60,
+                                        child: Center(child: Text("Add fund")),
+                                        decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10)),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20, right: 20),
+                              child: InkWell(
+                                onTap: () {
+                                  controller.genesisPlayerStartDeposit();
+                                },
+                                child: Text("Test"),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ));
         },
       ),
     );

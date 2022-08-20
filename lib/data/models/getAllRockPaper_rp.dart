@@ -34,7 +34,7 @@ class Data {
 class RockPaperGame{
   String gameId;
   String players;
-  String status;
+  int status;
   String value;
   RockPaperGame(this.gameId, this.players, this.status, this.value);
   factory RockPaperGame.fromJson(Map<String, dynamic> json) {
@@ -44,5 +44,13 @@ class RockPaperGame{
       json['status'],
       json['value'],
     );
+  }
+  Map<String, dynamic> toJson() {
+    return {
+      'gameId': gameId,
+      'players': players,
+      'status': status,
+      'value': value,
+    };
   }
 }

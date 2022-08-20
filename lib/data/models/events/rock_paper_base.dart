@@ -5,19 +5,22 @@ class RockPaperBaseModel{}
 
 
 class GameEvent extends RockPaperBaseModel{
-  String? gameId;
-  String? playerAddresses;
-  int? status;
-  GameEvent({this.gameId, this.playerAddresses, this.status});
+  String gameId;
+  String playerAddresses;
+  int status;
+  String value;
+  GameEvent({required this.gameId, required this.playerAddresses, required this.status, required this.value});
   factory GameEvent.fromJson(Map<String, dynamic> json) => GameEvent(
     gameId: json['gameId'],
     playerAddresses: json['playerAddresses'],
     status: json['status'],
+    value: json['value'],
   );
   Map<String, dynamic> toJson() => {
     'gameId': gameId,
     'players': playerAddresses,
     'status': status,
+    'value': value,
   };
 }
 
@@ -59,12 +62,14 @@ class GameEndEvent extends RockPaperBaseModel{
 
 
 class GameRoundEvent extends RockPaperBaseModel{
-  String? winner;
+  String winner;
+  List<RockPaperAction> roundActions;
 
-  GameRoundEvent({this.winner});
+  GameRoundEvent(this.winner, this.roundActions);
 
   factory GameRoundEvent.fromJson(Map<String, dynamic> json) => GameRoundEvent(
-    winner: json['winner'],
+    json['winner'],
+    List<RockPaperAction>.from(json["roundActions"]!.map((x) => RockPaperAction.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
