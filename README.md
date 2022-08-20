@@ -6,9 +6,9 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/hosseinkhojany/web3_games_front)
 ![GitHub](https://img.shields.io/github/license/hosseinkhojany/web3_games_front?color=yellow)
 
-## 🖥️ Desktop Preview
-![alt text](https://raw.githubusercontent.com/RAPEXA-TEAM/web3_games_front/master/ART/art.mp4?raw=true)
 ## 📱 Mobile Preview
+https://user-images.githubusercontent.com/37432839/185761720-e2a8de9c-8c7a-459d-b545-62225631280e.mp4
+
 
 ## ℹ️ About
 Our goal is to build, cross-platform gamification application with high personalization capabilities and performance
