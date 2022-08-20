@@ -7,7 +7,7 @@
 ![GitHub](https://img.shields.io/github/license/hosseinkhojany/web3_games_front?color=yellow)
 
 ## 🖥️ Desktop Preview
-![alt text](https://raw.githubusercontent.com/hosseinkhojany/web3_games_front/master/ART/art.mp4?raw=true)
+![alt text](https://raw.githubusercontent.com/RAPEXA-TEAM/web3_games_front/master/ART/art.mp4?raw=true)
 ## 📱 Mobile Preview
 
 ## ℹ️ About
