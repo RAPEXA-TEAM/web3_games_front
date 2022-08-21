@@ -52,6 +52,9 @@ Deployment is not currently in use.
 
 If you want to contribute to this project and make it better, your help is very welcome.
 
+If you want to know more about to start join to the telegram group below:
+https://t.me/multiplayer_web3_games
+
 
 ## ❤️ Thanks
 
