@@ -50,7 +50,7 @@ Deployment is not currently in use.
 
 ## 👑 Contributing
 
-If you want to contribute to this project and make it better, your help is very welcome.
+If you want to contribute to this project and make it better, your help is very welcome. </br>
 Telegram Group: https://t.me/multiplayer_web3_games
 
 
