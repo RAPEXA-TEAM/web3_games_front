@@ -32,7 +32,7 @@ Deployment is not currently in use.
   - Repository Pattern
 
 ### TODO
-- Implement Chessboard ~3d #type @name yyyy-mm-dd  
+- Implement Chessboard
   - The first game that is going to be included in our list of games is chess
 
 
