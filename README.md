@@ -32,22 +32,6 @@ Deployment is not currently in use.
   - Repository Pattern
 
 
-## 🍃 How to Setup
-
-- Download or clone the repository
-- Move the project to the selected directory
-- Open it with a code editor (Android Studio, Visual Studio Code)
-- Run flutter clean and pub get commands
-- Do not update / upgrade gradle and other versions until the app is up and running with built versions
-  
-
-## 🚀 How to Run
-
-- Run flutter clean and pub get commands
-- Launch Device
-- Run on the device
-
-
 ## 👑 Contributing
 
 If you want to contribute to this project and make it better, your help is very welcome. </br>
